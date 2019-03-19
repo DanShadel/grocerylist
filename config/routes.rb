@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get 'lists/add'
   resources :lists
   resources :recipes
   resources :ingredients

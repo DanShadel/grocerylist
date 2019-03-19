@@ -21,6 +21,15 @@ class ListsController < ApplicationController
   def edit
   end
 
+
+  def add_recipe
+    @recipe = Recipe.find(params[:recipe])
+    @list = List.last()
+    for @ingredient in @recipe.ingredients
+
+    end
+
+  end
   # POST /lists
   # POST /lists.json
   def create

@@ -1,4 +1,36 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<div class= "containter">
+	<p id="notice"><%= notice %></p>
+
+	<div style="padding-left: 6px">
+		<%= link_to 'Back', recipes_path, class: "btn btn-outline-dark" %>
+		<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-outline-dark" %> 
+
+	</div>
+	<h1>
+	  <%= @recipe.name %>
+	</h1>
+	<br>
+	<div class="row">
+		<div class="col" style="text-align: center;">
+
+		<p>
+		  <h4 style="color:#4B515D;">directions:</h4>
+		  <%= @recipe.directions %>
+		</p>
+		</div>
+
+		<div class="col">
+			<h3>Ingredients</h3>
+			<ul>
+			<% for @ingredient in @recipe.ingredients %>
+			<li><%= @ingredient.name %>:   <%=@ingredient.amount %> </li>
+			<% end %>
+			</ul>
+
+		</div>
+
+
+	</div>
+
+</div>
