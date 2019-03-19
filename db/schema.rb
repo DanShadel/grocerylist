@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(version: 20190319205101) do
   enable_extension "plpgsql"
 
   create_table "ingredients", force: :cascade do |t|
+    t.bigint "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
     t.bigint "lists_id"
-    t.bigint "recipe_id"
     t.string "amount"
     t.index ["lists_id"], name: "index_ingredients_on_lists_id"
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
