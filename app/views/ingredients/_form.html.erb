@@ -1,3 +1,5 @@
+<div class="container">
+  <div class= "container">
 <%= simple_form_for @ingredient do |f| %>
   <% if ingredient.errors.any? %>
     <div id="error_explanation">
@@ -11,12 +13,17 @@
     </div>
   <% end %>
 
-
+  <div class="form-group">
   <!-- simple form for ingredients -->
     <%= f.input :name %>
     <%= f.input :amount %>
-
-  <div class="actions">
-    <%= f.button :submit %>
   </div>
+
+    <div class="d-flex justify-content-center">
+       <div class="actions">
+       <%= f.button :submit,'Add to list', class: "btn btn-dark" %>
+       </div>
+    </div>
 <% end %>
+</div>
+</div>

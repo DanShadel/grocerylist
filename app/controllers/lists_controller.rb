@@ -4,12 +4,14 @@ class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = List.all
+    @list = List.last()
+    render "show"
   end
 
   # GET /lists/1
   # GET /lists/1.json
   def show
+
   end
 
   # GET /lists/new
@@ -21,14 +23,24 @@ class ListsController < ApplicationController
   def edit
   end
 
+  def clear
+    @list = List.last()
+    @list.ingredients.clear
+    render "show"
+  end
 
   def add_recipe
     @recipe = Recipe.find(params[:recipe])
     @list = List.last()
-    for @ingredient in @recipe.ingredients
+    @list.ingredients <<  @recipe.ingredients
+    render "show"
+  end
 
-    end
-
+  def add_ingredient
+    @list = List.last()
+    @ingredient = Ingredient.find(params[:id])
+    @list.ingredients << @ingredient
+    render "show"
   end
   # POST /lists
   # POST /lists.json

@@ -1,3 +1,5 @@
+<div class="container">
+  <div class= "container">
 <%= simple_form_for @recipe do |f| %>
   <% if recipe.errors.any? %>
     <div id="error_explanation">
@@ -14,22 +16,30 @@
 
   <!-- simple form for recipe -->
 
+  <div class="form-group">
   <%= f.input :name %>
   <%= f.input :directions %>
+</div>
 
 
+<br>
   <!-- nested fields for ingredients in the recipe -->
-
+  <div class="form-group">
   <%= f.nested_fields_for :ingredients do |ff| %>
    
     <%= ff.remove_nested_fields_link%>
     <%= ff.input :name %>
     <%= ff.input :amount %>
-
+    <br>
   <% end %>
   <%= f.add_nested_fields_link :ingredients, "Add ingredient" %>
+</div>
 
+  <div class="d-flex justify-content-center">
   <div class="actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-dark" %>
   </div>
+</div>
 <% end %>
+</div>
+</div>

@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<h1> LIST </h1>
+	
+ <% for @ingredient in @list.ingredients %>
+ 	<div class="row">
+ 		<div class="col-md-12">
+	 		<div class="d-flex justify-content-center">
+				<li><%= @ingredient.name %>:   <%=@ingredient.amount %> </li>
+			</div>
+		</div>
+	</div>
+<% end %>
+
+<div class="d-flex justify-content-center">
+<%= link_to 'clear', lists_clear_path, class: "btn btn-dark"  %> 
+</div>

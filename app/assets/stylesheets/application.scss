@@ -12,3 +12,56 @@
  *
  */
  @import "bootstrap";
+img.recipe-show {
+
+width: 500px;
+height: auto;
+margin-left: auto;
+margin-right: auto;
+display: block;
+}
+
+h1{
+	text-align: center;
+	color: #4B515D;
+}
+h3{
+	
+	color: #4B515D;
+}
+h4{
+	text-align: center;
+	color: #4B515D;
+}
+.recipe-box{
+	box-shadow: 5px 5px #4B515D;
+	height: 500px;
+	position: relative;
+	background: #dbdbdb;
+	border-radius: 30px;
+}
+img.recipe-index {
+	width: 100%;
+	height: 70%;
+	object-fit: cover;
+	border-radius: 30px;
+}
+.recipe-box ul {
+	list-style-type: none;
+	position: absolute;
+	bottom: 0;
+}
+.recipe-box li:first-child{
+	font-size: 24px;
+}
+.navbar-nav > li{
+
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.btn-outline-dark{
+	color:#4B515D;
+}
+.form-group{
+	text-align: center;
+}
